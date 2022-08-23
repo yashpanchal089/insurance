@@ -1,0 +1,26 @@
+base:
+  project: medical_insurance
+  random_status: 42
+  target_col: charges
+data_source:
+  s3_source: source_data/insurance_production.csv
+
+load_data:
+  raw_dataset_csv: data/raw/insurance_production.csv
+
+split_data:
+  train_path: data/processed/train_insurance.csv
+  test_path: data/processed/test_insurance.csv
+  test_size: 0.2
+
+estimators:
+  ElasticNet:
+    params:
+      alpha: 0.9
+      l1_ratio: 0.4
+
+model_dir: saved_models
+
+reports:
+  params: reports/params.json
+  scores: reports/scores.json
