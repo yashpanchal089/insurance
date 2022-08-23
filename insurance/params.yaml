@@ -1,6 +1,6 @@
 base:
   project: medical_insurance
-  random_status: 42
+  random_state: 42
   target_col: charges
 data_source:
   s3_source: source_data/insurance_production.csv
